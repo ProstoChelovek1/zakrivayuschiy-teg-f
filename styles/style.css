@@ -15,6 +15,420 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+	font-family: 'Inter-Variable', sans-serif;
+	font-size: 18px;
+	color: var(--main-color);
+    background: linear-gradient(var(--linear-gardient-start), var(--linear-gardient-end));
+}
+
+.background {
+	background: linear-gradient( var(--background-lines), transparent 2px), linear-gradient( 90deg, var(--background-lines), transparent 2px);
+	background-size: 4px 4px;
+	background-position: center center;
+	padding-top: 100px;
+}
+
+.header {
+	margin-bottom: 100px;
+	max-width: 700px;
+	background: var(--background);
+	border: 2px solid var(--main-color);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title_main {
+	font-family: "Press Start 2P", sans-serif;
+	margin-top: 120px;
+	font-size: clamp(49px, 6.17vw,65px);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.title_under_main {
+	font-family: 'Press Start 2P', sans-serif;
+	margin-top: 20px;
+	font-size: clamp(14px, 2.2vw,23px);
+	text-transform: uppercase;
+	text-align: center
+}
+
+.theme-menu__list {
+	margin-top: 25px;
+	max-width: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+.theme-menu__item {
+	display: flex;
+	margin-bottom: 14px;
+}
+
+.theme-menu__button {
+	font-family: 'Press Start 2P', sans-serif;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	background: transparent;
+	position: relative;
+	cursor: url(../images/pointer.png), pointer;
+	padding: 0px;
+	margin-left: 6px;
+	transition: 0.3s;
+}
+
+.theme-menu__button:after {
+	position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    transition: 0.3s;
+    height: 1px;
+    background: #000;
+}
+
+.theme-menu__button:focus:after {
+	width: 100%;
+	opacity: 0.6; 
+}
+
+.theme-menu__button:focus {
+	opacity: 0.6; 
+}
+
+.theme-menu__button:hover {
+	opacity: 0.6; 
+}
+
+.theme-menu__button:disabled:before {
+	content: "▶";
+	position: absolute;
+	left: -14px;
+	animation: pointer 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:disabled {
+	opacity: 0.6;
+}
+
+.main {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post {
+	display: block;
+	max-width: 700px;
+	background: var(--background);
+	border: 2px solid var(--main-color);
+	margin-bottom: 54px;
+}
+
+.post_title {
+	display: flex;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-left: 10px;
+	align-items: center;
+	height: 25px;
+}
+
+.div_image {
+	display: block;
+	max-width: 696px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 2px solid var(--main-color);
+	border-bottom: 2px solid var(--main-color);
+	position: relative;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filter2 {
+	filter: saturate(50%);
+}
+
+.filter3 {
+	filter: saturate(300%);
+}
+
+.filter4 {
+	filter: hue-rotate(30deg);
+}
+
+.filter5 {
+	filter: invert(100%);
+}
+
+.filter6 {
+	filter: sepia(100%);
+}
+
+.filter7 {
+	filter: blur(15px);
+}
+
+.filter8 {
+	filter: hue-rotate(90deg) blur(2px) grayscale(50%) opacity(80%);
+}
+
+.watermark {
+	position: absolute;
+	font-family: 'Press Start 2P', sans-serif;
+	z-index: 3;
+	font-size: 14px;
+	right: 25px;
+	top: 25px;
+	opacity: 0.5;
+	mix-blend-mode: hard-light;
+	color: var(--main-color);
+	text-shadow: 
+		1px 0 0px var(--background), 
+		0 1px 0px var(--background), 
+		-1px 0 0px var(--background), 
+		0 -1px 0px var(--background);
+}
+
+.div_text {
+	max-width: 646px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text {
+	font-size: 18px;
+	margin-top: 25px;
+}
+
+.div_like {
+	display: flex;
+	margin-left: auto;
+	margin-right: 35px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	max-width: 169px;
+	position: relative;
+	font-family: 'Press Start 2P', sans-serif;
+}
+
+.like-icon {
+	cursor: url(../images/pointer.png), pointer;
+	width: 27px;
+	height: 24px;
+	fill: none;
+}
+
+.card__icon-button {
+	padding: 0px;
+	margin: 0px;
+	height: 24px;
+	margin-top: auto;
+	margin-bottom: auto;
+	border: none;
+	background: transparent;
+	transition: all 5s;
+}
+
+.card__like-button {
+	border: 2px solid var(--main-color);
+	width: 130px;
+	height: 38px;
+	margin-left: auto;
+	cursor: url(../images/pointer.png), pointer;
+	position: relative;
+	overflow: hidden;
+	text-transform: uppercase;
+	background: transparent;
+	z-index: 1;
+	transition: left 0.5s ease-in-out;
+	font-size: 14px;
+	color: var(--main-color);
+}
+
+.card__like-button:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: var(--main-color);
+	transition: left 0.5s ease-in-out;
+	z-index: -1;
+}
+
+.card__like-button:hover:before {
+	left: 0;
+}
+
+.card__like-button:hover {
+	transition: 0.5s;
+	color: white;
+}
+
+.card__like-button:focus {
+  box-shadow: 2px 2px 0px var(--main-color);
+  outline: none;
+}
+
+.footer {
+	align-items: center;
+	display: flex;
+}
+
+.footer__button {
+	max-width: 335px;
+	font-family: 'Press Start 2P', sans-serif;
+	outline: 2px solid var(--main-color);
+	border: 0px solid var(--main-color);
+	background: var(--background);
+	position: relative;
+	cursor: url(../images/pointer.png), pointer;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	overflow: hidden;
+	color: var(--main-color);
+	display: inline-flex;
+	padding: 15px 20px;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+}
+
+.footer_title {
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.footer__button:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: var(--main-color);
+	transition: left 0.5s ease-in-out;
+	z-index: -1;
+}
+
+.footer__button:hover:before {
+	left: 0;
+}
+
+.footer__button:hover {
+	transition: 0.5s;
+	color: white;
+	--floppy-color: white;
+}
+
+.dialog {
+	max-width: 357px;
+	color: var(--main-color);
+	background: var(--background);
+	display: flex;
+	position: fixed;
+	padding: 30px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.dialog_title_div {
+	display:flex;
+}
+
+.dialog_title_form {
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog__button {
+	width: 100%;
+	align-items: center;
+	font-family: 'Press Start 2P', sans-serif;
+	border: 2px solid var(--main-color);
+	outline: none;
+	background: var(--background);
+	position: relative;
+	cursor: url(../images/pointer.png), pointer;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	overflow: hidden;
+	color: var(--main-color);
+	font-size: 14px;
+	padding: 9px 0px;
+}
+
+.dialog_title {
+	max-width: 234px;
+	padding-left: 20px;
+	line-height: 150%;
+	font-size: 14px;
+}
+
+.dialog__button:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: var(--main-color);
+	transition: left 0.5s ease-in-out;
+	z-index: -1;
+}
+
+.dialog__button:hover:before {
+	left: 0;
+}
+
+.dialog__button:hover {
+	transition: 0.5s;
+	color: white;
+	--floppy-color: white;
+}
+
+.card__icon-button:not([disabled]):not(.card__icon-button:active):hover {
+	animation: animation_hearth_hover 5s 1 forwards linear;
+}
+
+.is-liked:not(.is-liked:hover) {
+	animation: animation_hearth_like 5s 1 forwards linear;
+}
+
+.is-liked  {
+	animation: animation_hearth_like_hover 5s 1 forwards linear;
+}
+
+.card__icon-button:active {
+	animation: animation_hearth_active 5s 1 forwards linear;
+}
+
+.card__icon-button:focus {
+	outline: 2px solid var(--main-color);
+	border: 0px solid var(--main-color);
+	transition: 0.3s;
 }

@@ -4,3 +4,79 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root {
+	--main-color: black;
+	--floppy-color: black;
+	--background: #FFF;
+	--linear-gardient-start: #E7E7E7;
+	--linear-gardient-end: #1A1A1A;
+	--background-lines: #BBB;
+	--contour: var(--main-color);
+	--extra: transparent;
+	--main-body: transparent;
+	--core: transparent;
+	--sparks: transparent;
+
+}
+
+.theme-light { 
+	--main-color: black;
+	--floppy-color: black;
+	--background: #FFF;
+	--linear-gardient-start: #E7E7E7;
+	--linear-gardient-end: #1A1A1A;
+	--background-lines: #BBB;
+	--contour: var(--main-color);
+	--extra: transparent;
+	--main-body: transparent;
+	--core: transparent;
+	--sparks: transparent;
+}
+
+.theme-dark { 
+	--main-color: #00CC14;
+	--floppy-color: #00CC14;
+	--background: black;
+	--linear-gardient-start: #007F0C;
+	--linear-gardient-end: #004306;
+	--background-lines: black;
+	--contour: var(--main-color);
+	--extra: transparent;
+	--main-body: transparent;
+	--core: transparent;
+	--sparks: transparent;
+}
+
+
+@ media (prefers-color-scheme: light) {
+	:root {
+		--main-color: black;
+		--background: #FFF;
+		--floppy-color: black;
+		--linear-gardient-start: #E7E7E7;
+		--linear-gardient-end: #1A1A1A;
+		--background-lines: #BBB;
+		--contour: var(--main-color);
+		--extra: transparent;
+		--main-body: transparent;
+		--core: transparent;
+		--sparks: transparent;
+	}
+}
+
+@ media (prefers-color-scheme: dark) {
+	:root {
+		--main-color: #00CC14;
+		--background: black;
+		--floppy-color: #00CC14;
+		--linear-gardient-start: #007F0C;
+		--linear-gardient-end: #004306;
+		--background-lines: black;
+		--contour: var(--main-color);
+		--extra: transparent;
+		--main-body: transparent;
+		--core: transparent;
+		--sparks: transparent;
+	}
+}

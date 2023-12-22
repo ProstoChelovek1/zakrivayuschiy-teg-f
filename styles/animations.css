@@ -12,3 +12,129 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes pointer {
+	from {
+        left: -18px;
+    }
+    to {
+        left: -14px;
+    }
+}
+
+@keyframes animation_hearth_like {
+    20% {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: transparent;
+	    --core: red;
+	    --sparks: transparent;
+    }
+    40% {
+        --contour: red;
+        --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+    60% {
+        --contour: red;
+        --extra: red;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+    80% {
+		--contour: red;
+        --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: red;
+    }
+    to {
+        --contour: red;
+	    --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+}
+
+@keyframes animation_hearth_like_hover {
+	from {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: var(--main-color);
+	    --core: var(--main-color);
+	    --sparks: transparent;
+    }
+    20% {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: var(--main-color);
+	    --core: red;
+	    --sparks: transparent;
+    }
+    40% {
+        --contour: red;
+        --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+    60% {
+        --contour: red;
+        --extra: red;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+    80% {
+		--contour: red;
+        --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: red;
+    }
+    to {
+        --contour: red;
+	    --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+}
+
+@keyframes animation_hearth_hover {
+    from {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: transparent;
+	    --core: var(--main-color);
+	    --sparks: transparent;
+    }
+    to {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: var(--main-color);
+	    --core: var(--main-color);
+	    --sparks: transparent;
+    }
+}
+
+@keyframes animation_hearth_active {
+    from {
+        --contour: var(--main-color);
+	    --extra: transparent;
+		--main-body: var(--main-color);
+	    --core: red;
+	    --sparks: transparent;
+    }
+    to {
+        --contour: var(--main-color);
+	    --extra: transparent;
+	    --main-body: red;
+	    --core: red;
+	    --sparks: transparent;
+    }
+}
