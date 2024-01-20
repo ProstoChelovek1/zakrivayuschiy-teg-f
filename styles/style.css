@@ -17,22 +17,28 @@
 .page {
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
-	font-family: 'Inter-Variable', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 18px;
 	color: var(--main-color);
     background: linear-gradient(var(--linear-gardient-start), var(--linear-gardient-end));
+	background-image:
+	   linear-gradient(90deg, transparent 2px, transparent 2px),
+	   linear-gradient( var(--background-lines) 2px, transparent 2px),
+	   linear-gradient(90deg, var(--background-lines) 1px, transparent 2px),
+	   linear-gradient(var(--linear-gardient-start), var(--linear-gardient-end));
+   background-size:100% 100%, 4px 4px, 4px 4px;
+   background-position: center center;
+   padding-top: 100px;
 }
 
-.background {
-	background: linear-gradient( var(--background-lines), transparent 2px), linear-gradient( 90deg, var(--background-lines), transparent 2px);
-	background-size: 4px 4px;
-	background-position: center center;
-	padding-top: 100px;
+.main-icon{
+	width: 36px;
+	height: 36px;
 }
 
 .header {
 	margin-bottom: 100px;
-	max-width: 700px;
+	width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
 	background: var(--background);
 	border: 2px solid var(--main-color);
 	margin-left: auto;
@@ -40,15 +46,18 @@
 }
 
 .title_main {
-	font-family: "Press Start 2P", sans-serif;
-	margin-top: 120px;
-	font-size: clamp(49px, 6.17vw,65px);
+	display: block;
+	font-family: "Press Start 2P", 'Inter';
+	margin-top: 136px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: clamp(36px, 6.17vw,65px);
 	text-transform: uppercase;
 	text-align: center;
 }
 
 .title_under_main {
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	margin-top: 20px;
 	font-size: clamp(14px, 2.2vw,23px);
 	text-transform: uppercase;
@@ -69,11 +78,12 @@
 }
 
 .theme-menu__button {
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	border: none;
 	outline: none;
 	font-size: 14px;
 	background: transparent;
+	text-transform: uppercase;
 	position: relative;
 	cursor: url(../images/pointer.png), pointer;
 	padding: 0px;
@@ -89,16 +99,23 @@
     display: block;
     width: 0;
     transition: 0.3s;
-    height: 1px;
-    background: #000;
+    height: 2px;
+    background: var(--main-color);
 }
 
 .theme-menu__button:focus:after {
+	outline: none;
+}
+
+.theme-menu__button:focus-visible:after {
 	width: 100%;
-	opacity: 0.6; 
 }
 
 .theme-menu__button:focus {
+	outline: none;
+}
+
+.theme-menu__button:focus-visible {
 	opacity: 0.6; 
 }
 
@@ -109,12 +126,15 @@
 .theme-menu__button:disabled:before {
 	content: "▶";
 	position: absolute;
+	inset-block-start: auto;
+	inset-inline-start: auto;
 	left: -14px;
 	animation: pointer 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__button:disabled {
 	opacity: 0.6;
+	pointer-events: none;
 }
 
 .main {
@@ -128,18 +148,19 @@
 	max-width: 700px;
 	background: var(--background);
 	border: 2px solid var(--main-color);
-	margin-bottom: 54px;
+	margin-bottom: 50px;
 }
 
 .post_title {
 	display: flex;
-	font-weight: bold;
+	font-variation-settings: 'wght' 700;
 	font-size: 18px;
 	margin-top: 3px;
 	margin-bottom: 3px;
 	margin-left: 10px;
 	align-items: center;
-	height: 25px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 .div_image {
@@ -147,8 +168,10 @@
 	max-width: 696px;
 	margin-left: auto;
 	margin-right: auto;
+	aspect-ratio: auto;
 	border-top: 2px solid var(--main-color);
 	border-bottom: 2px solid var(--main-color);
+	height: 100%;
 	position: relative;
 }
 
@@ -157,39 +180,40 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	object-fit: contain;
 }
 
-.filter2 {
+.filter_half_saturate {
 	filter: saturate(50%);
 }
 
-.filter3 {
+.filter_extra_saturate {
 	filter: saturate(300%);
 }
 
-.filter4 {
+.filter_hue-rotate {
 	filter: hue-rotate(30deg);
 }
 
-.filter5 {
+.filter_invert {
 	filter: invert(100%);
 }
 
-.filter6 {
+.filter_sepia {
 	filter: sepia(100%);
 }
 
-.filter7 {
+.filter_blur {
 	filter: blur(15px);
 }
 
-.filter8 {
+.filter_hue-rotate_blur_grayscale_opacity {
 	filter: hue-rotate(90deg) blur(2px) grayscale(50%) opacity(80%);
 }
 
 .watermark {
 	position: absolute;
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	z-index: 3;
 	font-size: 14px;
 	right: 25px;
@@ -212,47 +236,27 @@
 
 .text {
 	font-size: 18px;
-	margin-top: 25px;
+	margin-top: 27px;
 }
 
 .div_like {
 	display: flex;
 	margin-left: auto;
-	margin-right: 35px;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-right: 25px;
+	margin-top: 24px;
+	margin-bottom: 24px;
 	max-width: 169px;
 	position: relative;
-	font-family: 'Press Start 2P', sans-serif;
-}
-
-.like-icon {
-	cursor: url(../images/pointer.png), pointer;
-	width: 27px;
-	height: 24px;
-	fill: none;
-}
-
-.card__icon-button {
-	padding: 0px;
-	margin: 0px;
-	height: 24px;
-	margin-top: auto;
-	margin-bottom: auto;
-	border: none;
-	background: transparent;
-	transition: all 5s;
+	font-family: 'Press Start 2P', 'Inter';
 }
 
 .card__like-button {
 	border: 2px solid var(--main-color);
 	width: 130px;
 	height: 38px;
-	margin-left: auto;
 	cursor: url(../images/pointer.png), pointer;
 	position: relative;
 	overflow: hidden;
-	text-transform: uppercase;
 	background: transparent;
 	z-index: 1;
 	transition: left 0.5s ease-in-out;
@@ -269,7 +273,7 @@
 	height: 100%;
 	background: var(--main-color);
 	transition: left 0.5s ease-in-out;
-	z-index: -1;
+		z-index: -1;
 }
 
 .card__like-button:hover:before {
@@ -286,14 +290,14 @@
   outline: none;
 }
 
-.footer {
+.save {
 	align-items: center;
 	display: flex;
 }
 
-.footer__button {
+.save__button {
 	max-width: 335px;
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	outline: 2px solid var(--main-color);
 	border: 0px solid var(--main-color);
 	background: var(--background);
@@ -311,12 +315,12 @@
 	flex-shrink: 0;
 }
 
-.footer_title {
+.save_title {
 	font-weight: 400;
 	font-size: 14px;
 }
 
-.footer__button:before {
+.save__button:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -328,11 +332,11 @@
 	z-index: -1;
 }
 
-.footer__button:hover:before {
+.save__button:hover:before {
 	left: 0;
 }
 
-.footer__button:hover {
+.save__button:hover {
 	transition: 0.5s;
 	color: white;
 	--floppy-color: white;
@@ -349,7 +353,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	font-size: 14px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -357,6 +361,7 @@
 
 .dialog_title_div {
 	display:flex;
+	padding-bottom: 30px;
 }
 
 .dialog_title_form {
@@ -367,7 +372,7 @@
 .dialog__button {
 	width: 100%;
 	align-items: center;
-	font-family: 'Press Start 2P', sans-serif;
+	font-family: 'Press Start 2P', 'Inter';
 	border: 2px solid var(--main-color);
 	outline: none;
 	background: var(--background);
@@ -411,24 +416,23 @@
 	--floppy-color: white;
 }
 
-.card__icon-button:not([disabled]):not(.card__icon-button:active):hover {
-	animation: animation_hearth_hover 5s 1 forwards linear;
-}
-
-.is-liked:not(.is-liked:hover) {
-	animation: animation_hearth_like 5s 1 forwards linear;
-}
-
-.is-liked  {
-	animation: animation_hearth_like_hover 5s 1 forwards linear;
-}
-
-.card__icon-button:active {
-	animation: animation_hearth_active 5s 1 forwards linear;
-}
-
 .card__icon-button:focus {
+	outline: 0px solid var(--main-color);
+	border: 0px solid var(--main-color);
+}
+
+.card__icon-button:focus-visible {
 	outline: 2px solid var(--main-color);
 	border: 0px solid var(--main-color);
 	transition: 0.3s;
+}
+
+@media (width <= 375px) {
+	.save__button {
+		flex-direction: column;
+	}
+	.floppy_disk {
+		width: 28px; 
+		height: 28px;
+	}
 }

@@ -13,6 +13,53 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+.like-icon {
+	cursor: url(../images/pointer.png), pointer;
+	fill: none;
+}
+
+.card__icon-button {
+	padding: 0px;
+	border: none;
+	background: transparent;
+}
+
+.core { 
+	 transition: fill 0s ease-in-out;
+}
+
+.main-body { 
+	 transition: fill 0.5s ease-in-out;
+}
+
+.contour {
+	transition: fill 0.5s ease-in-out;
+}
+
+.core, .main-body {
+    fill: transparent;
+}
+
+.like-icon:not(.is-liked):hover .core, .like-icon:not(.is-liked):hover .main-body {
+    fill: var(--main-color);
+}
+
+.like-icon:not(.is-liked):active .core, .like-icon:not(.is-liked):active .main-body {
+	fill: red;
+}
+
+.is-liked .extra {
+	animation: liked 1s ease;
+}
+
+.is-liked .sparks {
+	animation: liked 1.25s ease;
+}
+
+.is-liked .main-body, .is-liked .core, .is-liked .contour{
+	fill: red;
+}
+
 @keyframes pointer {
 	from {
         left: -18px;
@@ -22,119 +69,14 @@
     }
 }
 
-@keyframes animation_hearth_like {
-    20% {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: transparent;
-	    --core: red;
-	    --sparks: transparent;
-    }
-    40% {
-        --contour: red;
-        --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-    60% {
-        --contour: red;
-        --extra: red;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-    80% {
-		--contour: red;
-        --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: red;
-    }
-    to {
-        --contour: red;
-	    --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-}
-
-@keyframes animation_hearth_like_hover {
+@keyframes liked {
 	from {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: var(--main-color);
-	    --core: var(--main-color);
-	    --sparks: transparent;
+        fill: none
     }
-    20% {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: var(--main-color);
-	    --core: red;
-	    --sparks: transparent;
-    }
-    40% {
-        --contour: red;
-        --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-    60% {
-        --contour: red;
-        --extra: red;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-    80% {
-		--contour: red;
-        --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: red;
-    }
+	50% {
+		fill: red;
+	}
     to {
-        --contour: red;
-	    --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
-    }
-}
-
-@keyframes animation_hearth_hover {
-    from {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: transparent;
-	    --core: var(--main-color);
-	    --sparks: transparent;
-    }
-    to {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: var(--main-color);
-	    --core: var(--main-color);
-	    --sparks: transparent;
-    }
-}
-
-@keyframes animation_hearth_active {
-    from {
-        --contour: var(--main-color);
-	    --extra: transparent;
-		--main-body: var(--main-color);
-	    --core: red;
-	    --sparks: transparent;
-    }
-    to {
-        --contour: var(--main-color);
-	    --extra: transparent;
-	    --main-body: red;
-	    --core: red;
-	    --sparks: transparent;
+        fill: none;
     }
 }

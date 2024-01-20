@@ -1,10 +1,14 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
-@media (width <= 375px) {
-	.footer__button {
-		flex-direction: column;
-	}
-	.diskette {
-		width: 28px; 
-		height: 28px;
-	}
+:root {
+	--main-color: #00CC14;
+	--floppy-color: #00CC14;
+	--background: black;
+	--linear-gardient-start: #007F0C;
+	--linear-gardient-end: #004306;
+	--background-lines: black;
+	--contour: var(--main-color);
+	--extra: transparent;
+	--main-body: transparent;
+	--core: transparent;
+	--sparks: transparent;
 }
