@@ -6,9 +6,4 @@
 	--linear-gardient-start: #007F0C;
 	--linear-gardient-end: #004306;
 	--background-lines: black;
-	--contour: var(--main-color);
-	--extra: transparent;
-	--main-body: transparent;
-	--core: transparent;
-	--sparks: transparent;
 }
