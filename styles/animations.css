@@ -19,25 +19,20 @@
 	transform-origin: center;
 }
 
-.card__icon-button {
-	transition: all 0.3s ease;
-}
-
-.card__icon-button:focus-visible {
-	outline:none;
-	border: 2px solid var(--main-color);
+.heart {
+    transform-origin: center;
 }
 
 .core { 
-	 transition: fill 0.3s ease-in-out;
+	 transition: fill 0.3s linear;
 }
 
 .main-body { 
-	 transition: fill 0.3s ease-in-out 0.05s;
+	 transition: fill 0.3s linear 0.05s;
 }
 
 .contour {
-	transition: fill 0.3s ease-in-out 0.06s;
+	transition: fill 0.3s linear 0.06s;
 }
 
 .core, .main-body {
@@ -57,7 +52,7 @@
 }
 
 .is-liked .heart {
-    animation: scale 0.3s ease-in 0.1s alternate;
+    animation: scale 0.3s ease-in 0.1s;
 }
 
 .is-liked .main-body, .is-liked .core, .is-liked .contour  {
@@ -75,7 +70,7 @@
 
 @keyframes liked {
 	from {
-        fill: none;
+        fill: transparent;
     }
     to {
         fill: red;

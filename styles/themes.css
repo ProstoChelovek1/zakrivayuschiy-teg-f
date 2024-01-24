@@ -13,16 +13,18 @@
 		--linear-gardient-start: #E7E7E7;
 		--linear-gardient-end: #1A1A1A;
 		--background-lines: #d3d3d3;
+		--anti-main-color: white;
 	}
 }
 
 .theme-light { 
 	--main-color: black;
-	--floppy-color: black;
+	--floppy-color: white;
 	--background: #FFF;
 	--linear-gardient-start: #E7E7E7;
 	--linear-gardient-end: #1A1A1A;
 	--background-lines: #d3d3d3;
+	--anti-main-color: white;
 }
 
 .theme-dark	{ 
@@ -32,4 +34,5 @@
 	--linear-gardient-start: #007F0C;
 	--linear-gardient-end: #004306;
 	--background-lines: black;
+	--anti-main-color: #00CC14;
 }

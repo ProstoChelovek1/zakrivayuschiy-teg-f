@@ -21,10 +21,10 @@
 	font-size: 18px;
 	color: var(--main-color);
 	background-image:
-		linear-gradient(transparent 50%, var(--background-lines) 50%),
-		linear-gradient(90deg, transparent 50%, var(--background-lines) 50%),
-		linear-gradient(var(--linear-gardient-start), var(--linear-gardient-end));
-   background-size: 4px 4px, 4px 4px, cover;
+		repeating-linear-gradient(to bottom, var(--background-lines) 0px 2px, transparent 2px 4px), 
+		repeating-linear-gradient(to right, var(--background-lines) 0px 2px,transparent 2px 4px),
+		linear-gradient(to bottom, var(--linear-gardient-start), var(--linear-gardient-end));
+   background-size: cover;
    background-position: center center;
    background-attachment: fixed;
    padding-top: 100px;
@@ -89,8 +89,8 @@
 .theme-menu__button:after {
 	position: absolute;
     content: '';
-    left: 0;
-    bottom: 3;
+    left: 0px;
+    bottom: -3px;
     display: block;
     width: 0;
     transition: 0.3s;
@@ -141,7 +141,7 @@
 	display: block;
 	background: var(--background);
 	border: 2px solid var(--main-color);
-	margin-bottom: 50px;
+	margin-bottom: 48px;
 }
 
 .post_title {
@@ -213,11 +213,22 @@
 	opacity: 0.5;
 	mix-blend-mode: hard-light;
 	color: var(--main-color);
-	-webkit-text-stroke: 1px var(--background);
+	text-shadow: 
+		1px 0 0px var(--background), 
+		0 1px 0px var(--background), 
+		-1px 0 0px var(--background), 
+		0 -1px 0px var(--background);
 }
 
+@supports((text-stroke: 1px var(--background)) or (-webkit-text-stroke: 1px var(--background))) {
+    .watermark {
+        -webkit-text-stroke: 1px var(--background);
+        text-stroke: 1px var(--background);
+		text-shadow: none;
+    }
+} 
+
 .div_text {
-	max-width: 646px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -241,14 +252,7 @@
 
 .card__like-button {
 	width: 130px;
-	padding: 2px 7px;
-	background: transparent;
-
-}
-
-.card__like-button:hover {
-	transition: 0.5s;
-	color: white;
+	padding: 3px 7px;
 }
 
 .button:focus {
@@ -278,12 +282,15 @@
 	font-family: 'Press Start 2P', fantasy;
 	font-size: 14px;
 	justify-content: center;
-	transition: all 0.5s ease-in-out;
-	mix-blend-mode: normal;
+	transition: all 0.5s linear;
+}
+
+.floppy_disk {
+	mix-blend-mode: difference;
 }
 
 .save__button {
-	max-width: 335px;
+	max-width: 340px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 15px 20px;
@@ -291,9 +298,14 @@
 	flex-shrink: 0;
 }
 
-.save_title {
+.button__text {
 	font-weight: 400;
 	font-size: 14px;
+	z-index: 2;
+	position: relative;
+	color: var(--anti-main-color);
+	transition: color 0.5s;
+	mix-blend-mode: difference;
 }
 
 .button:before {
@@ -304,7 +316,7 @@
 	width: 100%;
 	height: 100%;
 	background: var(--main-color);
-	transition: left 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	z-index: -1;
 }
 
@@ -312,21 +324,14 @@
 	left: 0;
 }
 
-.save__button:hover {
-	transition: 0.5s ease-in-out;
-	color: white;
-}
-
-.save__button:hover .floppy_disk {
-	transition: 0.5s ease-in-out;
-	fill: white;
+.floppy_disk {
+	z-index: 3;
 }
 
 .dialog {
 	max-width: 357px;
 	color: var(--main-color);
 	background: var(--background);
-	display: flex;
 	position: fixed;
 	padding: 30px;
 	flex-direction: column;
@@ -336,13 +341,20 @@
 	font-family: 'Press Start 2P', fantasy;
 	font-size: 14px;
 	font-weight: 400;
-	text-transform: uppercase;
+	text-transform: uppercase;	
 }
+
+.dialog:popover-open {
+	display:flex;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
 
 .dialog_title_div {
 	display:flex;
 	padding-bottom: 30px;
-	justify-content: center;
     align-items: center;
 }
 
@@ -365,22 +377,24 @@
 	font-size: 14px;
 }
 
-.dialog__button:hover {
-	transition: 0.5s;
-	color: white;
-}
-
 .card__icon-button {
 	padding: 0px;
 	border: none;
 	background: transparent;
-	margin-right: 12px;
+	margin-right: 6px;
 	margin-left: auto;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
 }
 
 .card__icon-button:focus {
 	outline: none;
 	border: 0px solid var(--main-color);
+}
+
+.card__icon-button:focus-visible {
+	outline:none;
+	border: 2px solid var(--main-color);
 }
 
 .dialog_icon { 
@@ -395,5 +409,22 @@
 	.floppy_disk {
 		width: 28px; 
 		height: 28px;
+	}
+	.page {
+		padding-top: 115px
+	}
+	.watermark {
+		top: 27px;
+		right: 40px;
+	}
+	.header { 
+		max-width: 375px; 
+	}
+	.main { 
+		max-width: 375px; 
+	}
+	.dialog_icon { 
+		width: 13.4%; 
+		height: 13.4%;
 	}
 }
