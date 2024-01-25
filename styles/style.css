@@ -282,11 +282,12 @@
 	font-family: 'Press Start 2P', fantasy;
 	font-size: 14px;
 	justify-content: center;
-	transition: all 0.5s linear;
+	transition: all 0.3s ease;
 }
 
 .floppy_disk {
 	mix-blend-mode: difference;
+	z-index: 3;
 }
 
 .save__button {
@@ -324,28 +325,22 @@
 	left: 0;
 }
 
-.floppy_disk {
-	z-index: 3;
-}
-
 .dialog {
 	max-width: 357px;
 	color: var(--main-color);
 	background: var(--background);
-	position: fixed;
-	padding: 30px;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 30px;
 	font-family: 'Press Start 2P', fantasy;
+	padding: 30px;
 	font-size: 14px;
 	font-weight: 400;
 	text-transform: uppercase;	
 }
 
-.dialog:popover-open {
+.dialog.dialog[open] {
 	display:flex;
+	position: fixed;
+	flex-direction: column;
+	justify-content: center;
 }
 
 dialog::backdrop {
@@ -359,8 +354,11 @@ dialog::backdrop {
 }
 
 .dialog_title_form {
+	display:flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	padding: 5px;
 }
 
 .dialog__button {
@@ -389,7 +387,7 @@ dialog::backdrop {
 
 .card__icon-button:focus {
 	outline: none;
-	border: 0px solid var(--main-color);
+	border: 2px solid transparent;
 }
 
 .card__icon-button:focus-visible {
@@ -411,20 +409,36 @@ dialog::backdrop {
 		height: 28px;
 	}
 	.page {
-		padding-top: 115px
+		padding-top: 102	px
 	}
 	.watermark {
-		top: 27px;
-		right: 40px;
+		top: 25px;
+		right: 11px;
 	}
 	.header { 
-		max-width: 375px; 
+		width: 100%; 
+	}
+	.header_logo { 
+		font-size: clamp(2.5rem, -0.7727rem + 16.3636vw, 3.0625rem);
 	}
 	.main { 
-		max-width: 375px; 
+		width: 100%; 
 	}
 	.dialog_icon { 
 		width: 13.4%; 
 		height: 13.4%;
+	}
+	.dialog_title_div {
+		justify-content: center;
+	}
+	.dialog__button {
+		width: 90%;
+	}
+	.dialog {
+		max-width: 350px;
+		padding: 25px;
+	}
+	.header_logo {
+		margin-top: 120px;
 	}
 }
