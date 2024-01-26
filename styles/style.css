@@ -325,7 +325,11 @@
 	left: 0;
 }
 
-.dialog {
+.dialog[open] {
+	display:flex;
+	position: fixed;
+	flex-direction: column;
+	justify-content: center;
 	max-width: 357px;
 	color: var(--main-color);
 	background: var(--background);
@@ -334,13 +338,6 @@
 	font-size: 14px;
 	font-weight: 400;
 	text-transform: uppercase;	
-}
-
-.dialog.dialog[open] {
-	display:flex;
-	position: fixed;
-	flex-direction: column;
-	justify-content: center;
 }
 
 dialog::backdrop {
@@ -358,7 +355,6 @@ dialog::backdrop {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	padding: 5px;
 }
 
 .dialog__button {
@@ -370,14 +366,12 @@ dialog::backdrop {
 
 .dialog_title {
 	max-width: 234px;
-	padding-left: 20px;
 	line-height: 150%;
 	font-size: 14px;
 }
 
 .card__icon-button {
 	padding: 0px;
-	border: none;
 	background: transparent;
 	margin-right: 6px;
 	margin-left: auto;
@@ -396,8 +390,9 @@ dialog::backdrop {
 }
 
 .dialog_icon { 
-	width: 13.4%; 
-	height: 13.4%;
+	width: 39px; 
+	height: 39px;
+	margin-right: 20px;
 }
 
 @media (width <= 375px) {
@@ -408,11 +403,7 @@ dialog::backdrop {
 		width: 28px; 
 		height: 28px;
 	}
-	.page {
-		padding-top: 102	px
-	}
 	.watermark {
-		top: 25px;
 		right: 11px;
 	}
 	.header { 
@@ -420,25 +411,16 @@ dialog::backdrop {
 	}
 	.header_logo { 
 		font-size: clamp(2.5rem, -0.7727rem + 16.3636vw, 3.0625rem);
+		margin-top: 120px;
 	}
 	.main { 
 		width: 100%; 
 	}
-	.dialog_icon { 
-		width: 13.4%; 
-		height: 13.4%;
-	}
 	.dialog_title_div {
 		justify-content: center;
 	}
-	.dialog__button {
-		width: 90%;
-	}
-	.dialog {
+	.dialog[open] {
 		max-width: 350px;
-		padding: 25px;
-	}
-	.header_logo {
-		margin-top: 120px;
+		padding: 42px;
 	}
 }
