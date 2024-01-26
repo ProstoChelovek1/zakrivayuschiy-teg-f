@@ -421,6 +421,6 @@ dialog::backdrop {
 	}
 	.dialog[open] {
 		max-width: 350px;
-		padding: 42px;
+		padding: 30px 42px;
 	}
 }
